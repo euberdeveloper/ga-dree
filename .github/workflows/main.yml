@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Lint code
-        run: npm run lint
+        run: npm run lint:source
 
   # test:
   #   runs-on: ubuntu-latest
