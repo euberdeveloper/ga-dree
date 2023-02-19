@@ -8,12 +8,14 @@ export function parseOptions(): Options {
     const root = core.getInput('root');
     const config = core.getInput('config');
     const madeWithDree = core.getInput('madeWithDree') === 'true';
+    const exclude = core.getInput('exclude').split(',');
 
     return {
         targetPath,
         comment,
         root,
         config,
-        madeWithDree
+        madeWithDree,
+        exclude
     };
 }
