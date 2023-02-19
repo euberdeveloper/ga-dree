@@ -1,0 +1,91 @@
+name: Deploy action
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install node dependencies
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Use Node.js 18.x
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.x
+
+  #     - name: Install node dependencies
+  #       run: npm install
+
+  #     - name: Test action
+  #       run: npm test
+
+  build:
+    # needs: [lint, test]
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run bundle
+
+      - name: Remove not needed files
+        run: |
+          ls
+          rm -rf node_modules .git
+
+      - name: Upoad artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: everything
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Remove what is alraedy there
+        run: rm -rf *
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: everything
+          path: .
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "build: duplicate code of dev with bundled code"
+          branch: main
