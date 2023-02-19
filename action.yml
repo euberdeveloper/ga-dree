@@ -21,6 +21,10 @@ inputs:
     description: 'Add the "Made with dree" text after the dree text'
     required: false
     default: 'true'
+  exclude:
+    description: 'The paths that will be excluded from the directory tree, separated by comma (note: overwritten by the config file)'
+    required: false
+    default: '.git'
 branding:
   icon: check
   color: green

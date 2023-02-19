@@ -4,4 +4,5 @@ export interface Options {
     root: string;
     config?: string;
     madeWithDree: boolean;
+    exclude?: string[];
 }
