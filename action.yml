@@ -24,7 +24,7 @@ inputs:
   exclude:
     description: 'The paths that will be excluded from the directory tree, separated by comma (note: overwritten by the config file)'
     required: false
-    default: '.git'
+    default: '.git/'
 branding:
   icon: check
   color: green
