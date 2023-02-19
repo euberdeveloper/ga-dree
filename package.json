@@ -4,7 +4,27 @@
   "description": "The github action of dree",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "shx rm -rf dist bundled",
+    "pretranspile:source": "npm run clean",
+    "transpile:source": "tsc -p source",
+    "pretranspile": "npm run clean",
+    "transpile": "npm run transpile:source",
+    "pretranspile:all": "npm run clean",
+    "transpile:all": "tsc",
+    "lint:source": "eslint source --ext ts --format codeframe",
+    "lint:source:fix": "eslint source --ext ts --format codeframe --fix",
+    "lint:test": "eslint test --ext ts --format codeframe",
+    "lint:test:fix": "eslint test --ext ts --format codeframe --fix",
+    "lint": "npm run lint:source && npm run lint:test",
+    "lint:fix": "npm run lint:source:fix && npm run lint:test:fix",
+    "pretest": "npm run clean",
+    "test": "jest",
+    "cover:generate": "jest --coverage",
+    "cover:coveralls": "cat ./coverage/lcov.info | coveralls",
+    "cover:codecov": "codecov",
+    "cover": "npm run cover:generate && npm run cover:coveralls && npm run cover:codecov",
+    "prebundle": "shx rm -rf dist bundled",
+    "bundle": "node build.mjs"
   },
   "repository": {
     "type": "git",
