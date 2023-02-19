@@ -7,7 +7,7 @@ export function parseOptions(): Options {
     const comment = core.getInput('comment');
     const root = core.getInput('root');
     const config = core.getInput('config');
-    const madeWithDree = core.getInput('madeWithDree') === 'true';
+    const showMadeWithDree = core.getInput('showMadeWithDree') === 'true';
     const exclude = core.getInput('exclude').split(',');
 
     return {
@@ -15,7 +15,7 @@ export function parseOptions(): Options {
         comment,
         root,
         config,
-        madeWithDree,
+        showMadeWithDree,
         exclude
     };
 }

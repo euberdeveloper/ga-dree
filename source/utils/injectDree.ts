@@ -16,11 +16,11 @@ function getMarkdownComments(options: Options): [string, string, string] {
 function generateInjetedText(
     dreeResult: string,
     [commentBegin, commentEnd]: [string, string],
-    madeWithDree: boolean
+    showMadeWithDree: boolean
 ): string {
-    const madeWithDreeText = madeWithDree
-        ? ''
-        : '\nMade with [dree](https://github.com/marketplace/actions/ga-dree)\n\n';
+    const madeWithDreeText = showMadeWithDree
+        ? '\nMade with [dree](https://github.com/marketplace/actions/ga-dree)\n\n'
+        : '';
     return `${commentBegin}${madeWithDreeText}
 \`\`\`
 ${dreeResult}
@@ -33,7 +33,7 @@ function getInjectedText(options: Options): string {
     const dreeOptions = getDreeOptions(options);
     const dreeResult = dree.parse(options.root, dreeOptions);
     const [_comment, commentBegin, commentEnd] = getMarkdownComments(options);
-    return generateInjetedText(dreeResult, [commentBegin, commentEnd], options.madeWithDree);
+    return generateInjetedText(dreeResult, [commentBegin, commentEnd], options.showMadeWithDree);
 }
 
 function getMarkdownContentBeginEnd(

@@ -3,6 +3,6 @@ export interface Options {
     comment: string;
     root: string;
     config?: string;
-    madeWithDree: boolean;
+    showMadeWithDree: boolean;
     exclude?: string[];
 }
