@@ -4,7 +4,7 @@ import * as dree from 'dree';
 import { Options } from '@/types/Options';
 
 function getDreeOptions(options: Options): dree.ParseOptions | undefined {
-    return options.config ? JSON.parse(options.config) : { exclude: options.exclude };
+    return options.config ? JSON.parse(fs.readFileSync(options.config, 'utf-8')) : { exclude: options.exclude };
 }
 
 function getMarkdownComments(options: Options): [string, string, string] {
