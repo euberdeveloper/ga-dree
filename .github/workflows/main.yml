@@ -61,7 +61,7 @@ jobs:
           rm -rf node_modules .git
 
       - name: Upoad artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: everything
           path: .
