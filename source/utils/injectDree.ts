@@ -58,7 +58,7 @@ function getMarkdownContentBeginEnd(
 
 function getMarkdownContent(options: Options, injectedText: string): string {
     const [comment, commentBegin, commentEnd] = getMarkdownComments(options);
-    const content = fs.readFileSync(options.root, 'utf8');
+    const content = fs.readFileSync(options.targetPath, 'utf8');
     const contentCommentBeginEnd = getMarkdownContentBeginEnd(content, commentBegin, commentEnd, injectedText);
     const contentComment = contentCommentBeginEnd.replaceAll(comment, injectedText);
     return contentComment;
@@ -67,5 +67,5 @@ function getMarkdownContent(options: Options, injectedText: string): string {
 export function injectDree(options: Options): void {
     const injectedText = getInjectedText(options);
     const content = getMarkdownContent(options, injectedText);
-    fs.writeFileSync(options.root, content);
+    fs.writeFileSync(options.targetPath, content);
 }
