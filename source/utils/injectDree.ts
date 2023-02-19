@@ -18,7 +18,9 @@ function generateInjetedText(
     [commentBegin, commentEnd]: [string, string],
     madeWithDree: boolean
 ): string {
-    const madeWithDreeText = madeWithDree ? '' : '\nMade with [dree](https://dree.euber.dev)\n\n';
+    const madeWithDreeText = madeWithDree
+        ? ''
+        : '\nMade with [dree](https://github.com/marketplace/actions/ga-dree)\n\n';
     return `${commentBegin}${madeWithDreeText}
 \`\`\`
 ${dreeResult}
