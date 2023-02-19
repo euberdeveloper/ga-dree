@@ -25,8 +25,7 @@ function generateInjetedText(
 \`\`\`
 ${dreeResult}
 \`\`\`
-${commentEnd}
-`;
+${commentEnd}`;
 }
 
 function getInjectedText(options: Options): string {
