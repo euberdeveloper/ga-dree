@@ -8,7 +8,9 @@ function getDreeOptions(options: Options): dree.ParseOptions | undefined {
 }
 
 function getMarkdownComments(options: Options): [string, string, string] {
-    return [options.comment, `${options.comment} - BEGIN`, `${options.comment} - END`];
+    return [options.comment, `${options.comment} - BEGIN`, `${options.comment} - END`].map(
+        comment => `[//]: # (${comment})`
+    ) as [string, string, string];
 }
 
 function generateInjetedText(
@@ -16,7 +18,7 @@ function generateInjetedText(
     [commentBegin, commentEnd]: [string, string],
     madeWithDree: boolean
 ): string {
-    const madeWithDreeText = madeWithDree ? '' : 'Made with [dree](https://dree.euber.dev)\n';
+    const madeWithDreeText = madeWithDree ? '' : 'Made with [dree](https://dree.euber.dev)\n\n';
     return `${commentBegin}
 \`\`\`
 ${dreeResult}

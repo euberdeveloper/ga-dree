@@ -7,9 +7,9 @@ inputs:
     required: false
     default: './README.md'
   comment:
-    description: 'The comment that will be replaced with the directory tree'
+    description: 'The comment that will be replaced with the directory tree. Note: it will be of the format "[//]: # (comment)"'
     required: false
-    default: '[//]: # (dree)'
+    default: 'dree'
   root:
     description: 'The directory to be scanned'
     required: false
