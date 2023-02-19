@@ -20,6 +20,5 @@ Made with [dree](https://github.com/marketplace/actions/ga-dree)
 \`\`\`
 ${e}
 \`\`\`
-${r}
-`}function Fs(e){let t=qs(e),r=_n.parse(e.root,t),[n,o,s]=On(e);return Us(r,[o,s],e.showMadeWithDree)}function Ns(e,t,r,n){if(e.includes(t)){let o=e.split(t);return o[0]+o.slice(1).map(s=>{let i=s.split(r);return n+i.slice(1).join("")}).join("")}else return e}function $s(e,t){let[r,n,o]=On(e),s=$e.readFileSync(e.targetPath,"utf8");return Ns(s,n,o,t).replaceAll(r,t)}function En(e){let t=Fs(e),r=$s(e,t);$e.writeFileSync(e.targetPath,r)}try{Fe.info("Parsing options...");let e=bn();Fe.debug("Options",e),Fe.info("Injecting dree in file..."),En(e),Fe.success("File changed!!!")}catch(e){console.error("Error in executing action",e),xn.setFailed(e.message)}
+${r}`}function Fs(e){let t=qs(e),r=_n.parse(e.root,t),[n,o,s]=On(e);return Us(r,[o,s],e.showMadeWithDree)}function Ns(e,t,r,n){if(e.includes(t)){let o=e.split(t);return o[0]+o.slice(1).map(s=>{let i=s.split(r);return n+i.slice(1).join("")}).join("")}else return e}function $s(e,t){let[r,n,o]=On(e),s=$e.readFileSync(e.targetPath,"utf8");return Ns(s,n,o,t).replaceAll(r,t)}function En(e){let t=Fs(e),r=$s(e,t);$e.writeFileSync(e.targetPath,r)}try{Fe.info("Parsing options...");let e=bn();Fe.debug("Options",e),Fe.info("Injecting dree in file..."),En(e),Fe.success("File changed!!!")}catch(e){console.error("Error in executing action",e),xn.setFailed(e.message)}
 //# sourceMappingURL=index.cjs.map
