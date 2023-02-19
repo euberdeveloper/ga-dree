@@ -128,14 +128,16 @@ jobs:
 
 ### Supported Parameters
 
-| Parameter         | Description                                                                                                                                        | Default     |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `package-manager` | The package manager of your project (`npm`, `composer`, `maven`, `poetry` or `pipenv`).                                                                                | `npm`       |
-| `root-directory`  | The root directory (containing your `.json/.xml/.toml` file)                                                                                             | `./`        |
-| `path`            | If you have a custom json file containing the version of the project, you can specify its full path.                                               | `undefined` |
-| `version-prop`    | If in the json/xml/toml file the property containing the version is not called `version`, you can set it here. The key can be nested, like in `uno.due.tre` | `undefined` / for most cases the action behaves smartly for each package manager   |
+| Parameter          | Description                                                                                                          | Default       |
+|--------------------|----------------------------------------------------------------------------------------------------------------------|---------------|
+| `targetPath`       | A direct path to the markdown file with the comment where the directory tree will be injected                        | `./README.md` |
+| `comment`          | The comment that will be replaced with the directory tree. Note: it will be of the format `[//]: # (comment)`        | `dree`        |
+| `root`             | The directory to be scanned                                                                                          | `.`           |
+| `config`           | The path to the dree configuration file                                                                              | `undefined`   |
+| `showMadeWithDree` | Add the "Made with dree" text after the dree text                                                                    | `true`        |
+| `exclude`          | The paths that will be excluded from the directory tree, separated by comma *(note: overwritten by the config file)* | `.git/`       |
 
-**Note:** If `path` is specified, `package-manager` and `root-directory` are ignored.
+**Note:** If `config` is specified, `exclude` is ignored.
 
 ## How does it works
 
