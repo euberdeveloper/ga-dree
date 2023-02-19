@@ -1,0 +1,29 @@
+name: 'ga-dree'
+description: 'The github action of dree. After a special comment in the README, injects the directory tree of the repository made with dree.'
+author: 'Eugenio Berretta <euberdeveloper@gmail.com>'
+inputs:
+  targetPath:
+    description: 'A direct path to the markdown file with the comment where the directory tree will be injected'
+    required: false
+    default: './README.md'
+  comment:
+    description: 'The comment that will be replaced with the directory tree'
+    required: false
+    default: '[//]: # (dree)'
+  root:
+    description: 'The directory to be scanned'
+    required: false
+    default: '.'
+  config:
+    description: 'The path to the dree configuration file'
+    required: false
+  showMadeWithDree:
+    description: 'Add the "Made with dree" text after the dree text'
+    required: false
+    default: 'true'
+branding:
+  icon: check
+  color: green
+runs:
+  using: 'node16'
+  main: 'bundled/index.cjs'
