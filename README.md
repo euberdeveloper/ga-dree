@@ -135,7 +135,7 @@ jobs:
 | `root`             | The directory to be scanned                                                                                          | `.`           |
 | `config`           | The path to the dree configuration file                                                                              | `undefined`   |
 | `showMadeWithDree` | Add the "Made with dree" text after the dree text                                                                    | `true`        |
-| `exclude`          | The paths that will be excluded from the directory tree, separated by comma *(note: overwritten by the config file)* | `.git/`       |
+| `exclude`          | The paths that will be excluded from the directory tree, separated by comma *(note: overwritten by the config file)* | `.git/**`       |
 
 **Note:** If `config` is specified, `exclude` is ignored.
 
