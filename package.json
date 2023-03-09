@@ -24,8 +24,7 @@
     "cover:codecov": "codecov",
     "cover": "npm run cover:generate && npm run cover:coveralls && npm run cover:codecov",
     "prebundle": "shx rm -rf dist bundled",
-    "bundle": "node build.mjs",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "bundle": "node build.mjs"
   },
   "repository": {
     "type": "git",
@@ -42,7 +41,6 @@
     "@jest/types": "^29.5.0",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.14.6",
-    "conventional-changelog": "^3.1.25",
     "esbuild": "^0.17.11",
     "eslint": "^8.35.0",
     "jest": "^29.5.0",
