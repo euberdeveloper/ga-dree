@@ -1,3 +1,5 @@
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v3-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/ga-project-version)
+
 # ga-dree
 This github action is mainly used to generate a nice directory tree representation of the github repo in markdown files, injected where a specific comment is specified.
 
