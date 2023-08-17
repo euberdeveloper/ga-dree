@@ -59,16 +59,22 @@ function getMarkdownContentBeginEnd(
     }
 }
 
-function getMarkdownContent(options: Options, injectedText: string): string {
+function getMarkdownContent(options: Options, oldContent: string, injectedText: string): string {
     const [comment, commentBegin, commentEnd] = getMarkdownComments(options);
-    const content = fs.readFileSync(options.targetPath, 'utf8');
-    const contentCommentBeginEnd = getMarkdownContentBeginEnd(content, commentBegin, commentEnd, injectedText);
+    const contentCommentBeginEnd = getMarkdownContentBeginEnd(oldContent, commentBegin, commentEnd, injectedText);
     const contentComment = contentCommentBeginEnd.replaceAll(comment, injectedText);
     return contentComment;
 }
 
-export function injectDree(options: Options): void {
+export function injectDree(options: Options): boolean {
     const injectedText = getInjectedText(options);
-    const content = getMarkdownContent(options, injectedText);
-    fs.writeFileSync(options.targetPath, content);
+    const oldContent = fs.readFileSync(options.targetPath, 'utf8');
+    const content = getMarkdownContent(options, oldContent, injectedText);
+
+    if (content === oldContent) {
+        return false;
+    } else {
+        fs.writeFileSync(options.targetPath, content);
+        return true;
+    }
 }
