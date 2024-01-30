@@ -29,5 +29,5 @@ branding:
   icon: check
   color: green
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'bundled/index.cjs'
