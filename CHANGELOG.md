@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/euberdeveloper/ga-dree/compare/v1.5.1...v2.0.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **action.yml:** Now node 20 is used
+
+### Bug Fixes
+
+* **action.yml:** pass to node 20 ([5b5bb75](https://github.com/euberdeveloper/ga-dree/commit/5b5bb75d3d73147c47ec9c1568807062ff9cb580))
+
 ### [1.5.1](https://github.com/euberdeveloper/ga-dree/compare/v1.5.0...v1.5.1) (2024-01-30)
 
 ## [1.5.0](https://github.com/euberdeveloper/ga-dree/compare/v1.0.0...v1.5.0) (2024-01-30)
