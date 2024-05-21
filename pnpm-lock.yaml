@@ -14,16 +14,13 @@ importers:
       dree:
         specifier: ^4.8.4
         version: 4.8.4
-      eslint:
-        specifier: '8'
-        version: 8.57.0
       euberlog:
         specifier: ^2.5.1
         version: 2.5.1
     devDependencies:
       '@euberdeveloper/eslint-plugin':
-        specifier: ^2.6.0
-        version: 2.6.0(eslint@8.57.0)(typescript@5.4.5)
+        specifier: ^2.7.0
+        version: 2.7.0(typescript@5.4.5)
       '@jest/types':
         specifier: ^29.6.3
         version: 29.6.3
@@ -397,8 +394,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@euberdeveloper/eslint-plugin@2.6.0':
-    resolution: {integrity: sha512-mRQuKsnZKqmP5qk8FAkqifryMHpt3a28KK5wLpIyk/InEakyVVYRYoZiOmcLhE5fKC9KcJ14/A6AqG+AZ3cG5g==}
+  '@euberdeveloper/eslint-plugin@2.7.0':
+    resolution: {integrity: sha512-IyZfysHjYCSU6Ty86imkCZmZ5diTAOKn7DlEmEO1yHhFjvVk+xFr0ApjTD7TyIQolnBPixZNw477V7mq86llcw==}
 
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
@@ -2716,10 +2713,11 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@euberdeveloper/eslint-plugin@2.6.0(eslint@8.57.0)(typescript@5.4.5)':
+  '@euberdeveloper/eslint-plugin@2.7.0(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
+      eslint: 8.57.0
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
       eslint-formatter-codeframe: 7.32.1
       eslint-plugin-mocha: 10.4.3(eslint@8.57.0)
@@ -2728,7 +2726,6 @@ snapshots:
       prettier: 3.2.5
     transitivePeerDependencies:
       - '@types/eslint'
-      - eslint
       - supports-color
       - typescript
 
